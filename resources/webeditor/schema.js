@@ -321,6 +321,12 @@ const configSchema = {
       schema: {
         name: { label: "渠道名称", type: "text", required: true },
         model: { label: "模型名称", type: "text", required: true },
+        baseURL: {
+          label: "基本地址",
+          type: "text",
+          required: false,
+          help: "Gemini 代理地址，如 https://c.geminiproxy.ggff.net；留空使用官方地址",
+        },
         api: {
           label: "API Key",
           type: "textarea",

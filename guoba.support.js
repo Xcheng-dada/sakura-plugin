@@ -319,6 +319,13 @@ export function supportGuoba() {
               { field: "name", label: "渠道名称", component: "Input", required: true },
               { field: "model", label: "模型名称", component: "Input", required: true },
               {
+                field: "baseURL",
+                label: "基本地址",
+                component: "Input",
+                required: false,
+                bottomHelpMessage: "Gemini 代理地址，如 https://c.geminiproxy.ggff.net；留空使用官方地址",
+              },
+              {
                 field: "api",
                 label: "API Key",
                 component: "InputTextArea",
