@@ -419,6 +419,20 @@ export function supportGuoba() {
             "启用后，每个用户处理完当前消息前，不会处理该用户的后续消息，直到当前消息处理完毕",
         },
         {
+          field: "AI.enableEmojiLike",
+          label: "触发贴表情",
+          component: "Switch",
+          required: false,
+          bottomHelpMessage: "AI 触发时是否对消息贴表情回应，关闭后不再贴表情",
+        },
+        {
+          field: "AI.emojiLikeId",
+          label: "固定表情ID",
+          component: "Input",
+          required: false,
+          bottomHelpMessage: "AI 触发时固定的表情ID，留空则为随机，如 424 (OK)",
+        },
+        {
           field: "AI.toolschannel",
           label: "工具渠道",
           component: "Input",

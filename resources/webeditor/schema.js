@@ -427,6 +427,16 @@ const configSchema = {
       type: "boolean",
       help: "启用后，每个用户处理完当前消息前，不会处理该用户的后续消息，直到当前消息处理完毕",
     },
+    "AI.enableEmojiLike": {
+      label: "触发贴表情",
+      type: "boolean",
+      help: "AI 触发时是否对消息贴表情回应，关闭后不再贴表情",
+    },
+    "AI.emojiLikeId": {
+      label: "固定表情ID",
+      type: "text",
+      help: "AI 触发时固定的表情ID，留空则为随机，如 424 (OK)",
+    },
     "AI.requirePermission": {
       label: "需要权限",
       type: "boolean",

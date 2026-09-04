@@ -166,8 +166,16 @@ export class AIChat extends plugin {
     const { Channel, Prompt, GroupContext, History, Tool } = matchedProfile
 
     logger.info(`Chat触发`)
-    if (e.isGroup && typeof e.group?.setMsgEmojiLike === "function") {
-      await randomEmojiLike(e)
+    if (e.isGroup && this.appconfig?.enableEmojiLike !== false && typeof e.group?.setMsgEmojiLike === "function") {
+      if (this.appconfig?.emojiLikeId) {
+        try {
+          await e.group?.setMsgEmojiLike?.(e.message_id, String(this.appconfig.emojiLikeId))
+        } catch (err) {
+          logger.error(`表情回应失败: ${err}`)
+        }
+      } else {
+        await randomEmojiLike(e)
+      }
     }
 
     let finalResponseText = ""
