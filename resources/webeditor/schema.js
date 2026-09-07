@@ -334,6 +334,12 @@ const configSchema = {
           required: true,
         },
         vertex: { label: "Vertex AI", type: "boolean", required: false },
+        retryAttempts: {
+          label: "429重试次数",
+          type: "number",
+          required: false,
+          help: "触发 429 限流时的最大重试次数，默认 5，设为 0 关闭重试",
+        },
       },
     },
     "Channels.grok": {
